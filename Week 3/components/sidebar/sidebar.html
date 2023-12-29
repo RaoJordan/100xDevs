@@ -1,0 +1,68 @@
+<html>
+<head>
+    <link href="sidebar.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>App</title>
+</head>
+<body>
+    <div>
+        <div class="sidebar">
+            <div class="top">
+                <div class="logo">
+                    <i class='bx bxl-codepen'></i>
+                    <span>JOBLelo</span>
+                </div>
+                <i class='bx bx-menu' id="button"></i>
+            </div>
+            <div class="user" style="width: 200px">
+                <img src="yash_photo.jpg" alt=" " class="user-img" ></img>
+                <div>
+                    .<p class="bold">Yash</p>
+                    <p>Admin</p>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="bx bxs-grid-alt"></i>
+                        <span class="nav-item">Dashboard</span>
+                    </a>
+                    <span class="tooltip">Dashboard</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bxs-grid-alt"></i>
+                        <span class="nav-item">All Applications</span>
+                    </a>
+                    <span class="tooltip">All Applications</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bxs-grid-alt"></i>
+                        <span class="nav-item">New Applications</span>
+                    </a>
+                    <span class="tooltip">New Applications</span>
+                </li>
+            </ul>
+        </div>
+        <div class="main-content">  
+            <div class="container">
+                <h1>JobLelo</h1>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+<script>
+    
+    let btn = document.querySelector("#button");
+    let sidebar = document.querySelector(".sidebar");
+
+    btn.onclick = function() {
+        sidebar.classList.toggle('active');
+    };
+</script>
+
+
+</html>
