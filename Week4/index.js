@@ -11,9 +11,18 @@ let time = document.querySelector('#time');
 let InterestButton = document.querySelector('#InterestButton');
 let InterestResult = document.querySelector('#result');
 
+let timeout;
+const debouncedSum = () => {
+    // If the user is typing continuosly, this function will be called multiple times in a very short period
+    // of time and hence sum() wont't be called. clearTimeout will rest the time to 0. If the user takes a
+    // break of one second only than sum() will be called and a request would be sent to the backend.
+    clearTimeout(timeout);
+    timeout = setTimeout(()=>{
+        sum()
+    }, 1000)
+}
 
-
-button.onclick = ()=>{
+const sum = ()=>{
     let value1 = parseFloat(num1.value) || 0;
     let value2 = parseFloat(num2.value) || 0;
 

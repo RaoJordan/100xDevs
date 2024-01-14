@@ -2,9 +2,9 @@
     <body>
         <div>
             <h1>SUM CALCULATOR</h1>
-            <input type="number" placeholder="FirstNumber" id="num1"></input><br></br>
-            <input type="number" placeholder="SecondNumber" id="num2"></input><br></br>
-            <button id="button">Calculate Sum</button>
+            <input type="number" placeholder="FirstNumber" id="num1" oninput="debouncedSum()"></input><br></br>
+            <input type="number" placeholder="SecondNumber" id="num2" oninput="debouncedSum()"></input><br></br>
+            
             <div id="output">No Input found</div>
         </div>
 
