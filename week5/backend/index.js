@@ -1,8 +1,10 @@
 const express = require("express");
 const { createTodo, updateTodo } = require("./types");
 const { todo } = require("./db");
+const cors = require("cors");
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.get("/todos", async (req, res) => {
     const todos = await todo.find();
@@ -46,7 +48,7 @@ app.put("/completed", async (req, res) => {
     }
 
     // Update the data in mongoDB
-    await todo.update({
+    await todo.updateOne({
         _id : req.body.id
     }, {
         completed: true
@@ -57,4 +59,4 @@ app.put("/completed", async (req, res) => {
     })
 })
 
-app.listen(3000);
+app.listen(3000 , () => {console.log("Listening on Port 3000")});
